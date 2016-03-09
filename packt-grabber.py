@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup
 
 import re
 
-email    = 'YOUR_EMAIL_HERE'
-password = 'YOUR_PASSWORD_HERE'
+email    = 'elio@capelati.com'
+password = 'elicap123@'
 
 form_url = 'https://www.packtpub.com/packt/offers/free-learning'
 download_url = 'https://www.packtpub.com/ebook_download/'
@@ -54,10 +54,10 @@ def claim_book(form_url, email, password):
     if not url:
         print 'Failed to find claim url'
 
-    #r = s.get('https://www.packtpub.com'+url['href'])
+    r = s.get('https://www.packtpub.com'+url['href'])
 
-    #if r.status_code == 200:
-    if 200 == 200:
+    if r.status_code == 200:
+    
         print 'Success'
         
         #save pdf
